@@ -1,0 +1,5 @@
+petId,categoryName,petName,photoUrlsText,tagsName,status
+0,horse,pretty,pretty face,horse, available
+1,cats,meong,meong picture,cats, available
+2,dogs,cola,cola pics, dogs, available
+x,random,false,false response,failed, available

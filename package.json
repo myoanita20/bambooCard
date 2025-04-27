@@ -1,0 +1,34 @@
+{
+  "name": "bamboocard",
+  "version": "1.0.0",
+  "description": "This repository is for Bamboo Card Recruitment Process",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run --browser chrome --spec cypress/e2e/**/*.feature",
+    "generate-report": "npx multiple-cucumber-html-reporter --jsonDir cypress/cucumber-json --reportPath cypress/reports/html",
+    "test-bdd": "npm run test && npm run generate-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myoanita20/bambooCard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/myoanita20/bambooCard/issues"
+  },
+  "homepage": "https://github.com/myoanita20/bambooCard#readme",
+  "dependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
+    "cypress-on-fix": "^1.1.0"
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
+    "cypress": "^14.3.2",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}
