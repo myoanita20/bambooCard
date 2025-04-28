@@ -5,6 +5,7 @@ import GenerateUtils from "../../utils/generate";
 import myAccountPO from "../../pageObjects/myAccountPage";
 import testdata from "../../fixtures/test_data.json"
 import checkoutPO from "cypress/pageObjects/checkoutPage";
+import wishlistPO from "cypress/pageObjects/wishlistPage";
 
 let firstname = GenerateUtils.generateRandomName(5)
 let lastname = GenerateUtils.generateRandomName(5)
@@ -13,6 +14,7 @@ let password = GenerateUtils.generatePassword(8)
 let searchText : string
 let address = GenerateUtils.generateRandomName(10)
 let phoneNumber = GenerateUtils.generateRandoPhoneNumber()
+let productNameGlobal : string
 
 Given('user go to magento website',()=>{
     cy.visit('/')
@@ -55,6 +57,7 @@ Then('user should redirect to my account page',()=>{
 Given('user login to magento website',()=>{
     homepagePO.user_click('Sign In')
     homepagePO.user_login(testdata.email, testdata.password)
+    address
 })
 
 When('user search {string}', (search_text: string)=>{
@@ -66,8 +69,9 @@ Then('user validate the result',()=>{
     homepagePO.validateSearchResult(searchText)
 })
 
-When('user click {string} for {string}',(buttonName: string, productNamme: string)=>{
-    homepagePO.selectAproduct(productNamme)
+When('user click {string} for {string}',(buttonName: string, productName: string)=>{
+    productNameGlobal = productName
+    homepagePO.selectAproduct(productName)
     homepagePO.user_click(buttonName)
 })
 
@@ -85,3 +89,6 @@ Then('user successfully create an order', ()=>{
     checkoutPO.validateSuccessCreateOrder()
 })
 
+Then('validate product added to wishlist page',()=>{
+    wishlistPO.validateWishlist(productNameGlobal)
+})

@@ -20,7 +20,8 @@ class checkoutPage{
         myBillingText: ()=> cy.get('label[for="billing-address-same-as-shipping-checkmo"]'),
         thankyouPurchaseText: ()=> cy.get('span[data-ui-id="page-title-wrapper"]').contains('Thank you for your purchase!'),
         continueShoppingBtn: ()=> cy.get('a[href]').contains('Continue Shopping'),
-        placeOrderBtn: ()=> cy.get('button[type="submit"]').contains('Place Order')
+        placeOrderBtn: ()=> cy.get('button[type="submit"]').contains('Place Order'),
+        addAllToCart: ()=> cy.get('button[data-role="all-tocart"]')
     }
 
     fillOrderForm(firstname: string, lastname: string, address: string, phoneNumber: string, email: string){

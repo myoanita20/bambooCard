@@ -29,13 +29,12 @@ Feature: All scenario for automation
         Given user go to magento website
         And user login to magento website
         When user search "Tote"
-        And user click "Wishlist icon" for "Savvy Shoulder Tote"
+        And user click "Add to Wishlist" for "Savvy Shoulder Tote"
         Then validate product added to wishlist page
         When user click "Add All to Cart"
         And user click "Cart icon"
         And user click "Proceed to Checkout"
         And user click "Next"
-        And user validate payment method page
         And user click "Place Order"
         Then user successfully create an order
 

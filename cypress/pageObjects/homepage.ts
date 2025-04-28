@@ -53,6 +53,10 @@ class homepage{
                 elementLocator = this.elements.addToWishList()
                 break
                 
+            case 'Add All to Cart':
+                elementLocator = checkoutPO.elements.addAllToCart()
+                break
+                
             default:
                 throw new Error(errorMessage.buttonError)
         }
